@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class ContatoDao {
-	//	a	conexão	com	o	banco	de	dados
+	// a conexão com o banco de dados
 	private Connection connection;
 
 	public ContatoDao() {
@@ -18,14 +18,14 @@ public class ContatoDao {
 	public void adiciona(Contato contato) {
 		String sql = "insert	into	contatos	" + "(nome,email,endereco,dataNascimento)" + "	values	(?,?,?,?)";
 		try {
-			//	prepared	statement	para	inserção
+			// prepared statement para inserção
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			//	seta	os	valores
+			// seta os valores
 			stmt.setString(1, contato.getNome());
 			stmt.setString(2, contato.getEmail());
 			stmt.setString(3, contato.getEndereco());
 			stmt.setDate(4, new Date(contato.getDataNascimento().getTimeInMillis()));
-			//	executa
+			// executa
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -44,11 +44,11 @@ public class ContatoDao {
 				contato.setNome(rs.getString("nome"));
 				contato.setEmail(rs.getString("email"));
 				contato.setEndereco(rs.getString("endereco"));
-				//	montando	a	data	através	do	Calendar
+				// montando a data através do Calendar
 				Calendar data = Calendar.getInstance();
 				data.setTime(rs.getDate("dataNascimento"));
 				contato.setDataNascimento(data);
-				//	adicionando	o	objeto	à	lista
+				// adicionando o objeto à lista
 				contatos.add(contato);
 			}
 			rs.close();

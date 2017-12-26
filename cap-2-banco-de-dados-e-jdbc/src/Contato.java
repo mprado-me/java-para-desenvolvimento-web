@@ -7,7 +7,7 @@ public class Contato {
 	private String endereco;
 	private Calendar dataNascimento;
 
-	//	métodos	get	e	set	para	id,	nome,	email,	endereço	e	dataNascimento
+	// métodos get e set para id, nome, email, endereço e dataNascimento
 	public String getNome() {
 		return this.nome;
 	}
