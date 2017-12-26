@@ -1,7 +1,5 @@
 # Banco de Dados e JDBC
 
-### Conceitos chaves
-
 * **JDBC:** JDBC significa Java DataBase Connection. É uma biblioteca em Java que provê interfaces para que programas em Java não lidem diretamente com os protocolos e peculiaridades de cada banco de dados.
 * **Driver:** No contexto do JDBC, drivers são os pacotes que implementam as interfaces do JDBC (classes concretas) para cada banco de dados específico.
 * **Javabeans:** Classes com construtor sem argumentos e métodos de acesso do tipo get e set.
