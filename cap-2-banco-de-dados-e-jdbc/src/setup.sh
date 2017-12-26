@@ -9,13 +9,13 @@ sudo mysql -u root -e "grant all privileges on *.* to 'test'@'localhost';"
 sudo mysql -u test --password="123456" -e "drop database fj21;";
 sudo mysql -u test --password="123456" -e "create database fj21;";
 sudo mysql -u test --password="123456" -e "
-	create	table	contatos	(
-		id	BIGINT	NOT	NULL	AUTO_INCREMENT,
-		nome	VARCHAR(255),
-		email	VARCHAR(255),
-		endereco	VARCHAR(255),
-		dataNascimento	DATE,
-		primary	key	(id)
+	create table contatos (
+		id BIGINT NOT NULL AUTO_INCREMENT,
+		nome VARCHAR(255),
+		email VARCHAR(255),
+		endereco VARCHAR(255),
+		dataNascimento DATE,
+		primary key (id)
 	);
 " fj21;
 
