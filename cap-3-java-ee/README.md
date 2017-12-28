@@ -21,6 +21,6 @@
 	6. SAP,  SAP  NetWeaver  Application  Server  ou  SAP Web  Application  Server,  Java  EE  6 Web Profile;
 * **Servlet Container:** Implementação do Java EE apenas com as funcionalidade clássicas de aplicações web. O mais famoso deles é o Apache Tomcat.
 
-### Observações
+### Observações:
 
 * O código apenas cria um servidor baseado no Tomcat, contém apenas configurações, nenhuma implementação.
