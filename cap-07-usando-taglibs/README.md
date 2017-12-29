@@ -1,6 +1,6 @@
 # Capítulo 7: Usando Taglibs
 
-* **Taglibs:** Da necessidade de tornar os arquivos .jps mais legíveis, a sun criou tags que representavam código em um arquivo .jsp
+* **Taglibs:** Da necessidade de tornar os arquivos .jsp mais legíveis, a Sun criou tags que representavam código em um arquivo .jsp
 * **Tag para instanciar objetos Javabeans:**
 ```
 <jsp:useBean id="contato" class="br.com.caelum.agenda.modelo.Contato"/>
@@ -11,7 +11,7 @@ ${contato.nome}
 ```
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 ```
-* **Foreach, if e import com JSTL:**
+* **Foreach, if, import e formatação de data com JSTL:**
 ```
 <html>
 <body>
