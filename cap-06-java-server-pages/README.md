@@ -45,12 +45,12 @@
 </body>
 </html>
 ```
-* Exibindo um parâmetro enviado no request com JSP:
+* Exibindo um parâmetro enviado no request com JSP (usando EL - Expression Language):
 ```
 <html>
 <body>
 	Testando seus parâmetros:
-	<br /> A idade é ${param.idade}.
+	<br/> A idade é ${param.idade}.
 </body>
 </html>
 ```
