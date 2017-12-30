@@ -49,4 +49,4 @@ public interface Logica {
 	String executa(HttpServletRequest req, HttpServletResponse res) throws Exception;
 }
 ```
-* Esconder os arquivos .jsp que devem passar por um Servlet (para terem os dados) na pasta /WEB-INF/jsp.
+* Os arquivos .jsp que devem passar por um Servlet (para terem os dados) devem ser escondidos na pasta /WEB-INF/jsp.
