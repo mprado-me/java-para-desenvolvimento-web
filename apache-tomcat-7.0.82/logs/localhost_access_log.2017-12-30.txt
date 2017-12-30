@@ -1,0 +1,13 @@
+127.0.0.1 - - [30/Dec/2017:10:06:33 -0200] "GET / HTTP/1.1" 200 11217
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:10:06:41 -0200] "GET / HTTP/1.1" 200 11217
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:10:06:46 -0200] "GET /fj21-agenda/lista-contatos.jsp HTTP/1.1" 200 1370
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:10:06:46 -0200] "GET /fj21-agenda/imagens/caelum.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:00:36 -0200] "GET /fj21-agenda/adiciona-contato.html HTTP/1.1" 404 60
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:00:40 -0200] "GET /fj21-agenda/adiciona-contato.jsp HTTP/1.1" 200 538
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:39 -0200] "GET /fj21-agenda/adiciona-contato.jsp HTTP/1.1" 200 810
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:39 -0200] "GET /fj21-agenda/css/jquery-ui.css HTTP/1.1" 200 35997
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:39 -0200] "GET /fj21-agenda/js/jquery.js HTTP/1.1" 200 293430
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:39 -0200] "GET /fj21-agenda/js/jquery-ui.js HTTP/1.1" 200 520714
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:41 -0200] "GET /fj21-agenda/adiciona-contato.jsp HTTP/1.1" 200 810
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:43 -0200] "GET /fj21-agenda/css/images/ui-icons_444444_256x240.png HTTP/1.1" 404 60
+0:0:0:0:0:0:0:1 - - [30/Dec/2017:11:06:57 -0200] "GET /fj21-agenda/css/images/ui-icons_555555_256x240.png HTTP/1.1" 404 60
