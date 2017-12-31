@@ -1,52 +1,60 @@
 # Capítulo 10: Filtros
 
-* **Ideia do MVC no Java:** Separar a lógica do negócio (Servlet) da apresentação (JSP): 
-
-![alt text](https://i.imgur.com/cF9s42P.png)
-
-* **Servlet centralizador (Controller):** Para se evitra o uso de múltiplos Servlets (mpultiplas portas), utilzia-se um Servelet principal:
+* **Ideia dos filtros:** Servem para compartilhar uma responsabilidade que algumas rotas devem ter, como logging, autenticação, segurança etc.
+* **Declarando um filtro antes do Java EE 6:** O filtro e as rotas da qual ele participa devem ser declarados no arquivo web.xml:
 ```
-@WebServlet("/sistema")
-public class ControllerServlet extends HttpServlet {
-	protected void service(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException,
-			IOException {
-		String parametro = request.getParameter("logica");
-		String nomeDaClasse = "br.com.caelum.mvc.logica." + parametro;
-		try {
-			Class<?> classe = Class.forName(nomeDaClasse);
-			Logica logica = (Logica) classe.newInstance();
-			// Recebe o String após a execução da lógica
-			String pagina = logica.executa(request, response);
-			// Faz o forward para a página JSP
-			request.getRequestDispatcher(pagina).forward(request, response);
-		} catch (Exception e) {
-			throw new ServletException("A lógica de negócios causou uma exceção", e);
-		}
-	}
-}
+<filter>             
+	<filter-name>meuFiltro</filter-name>
+	<filter-class>br.com.caelum.filtro.MeuFiltro</filter-class>         
+</filter>         
+<filter-mapping>             
+	<filter-name>meuFiltro</filter-name>             
+	<url-pattern>/*</url-pattern>         
+</filter-mapping>
 ```
-* **Passando um parâmetro do Servlet para o JSP:**
+* **Declarando um filtro a partir do Java EE 6:** Nesse caso, pode-se usar annotations para declarar o filtro:
 ```
-public class ListaContatosLogic implements Logica {             
-	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception { 
-		// Monta a lista de contatos                     
-		List<Contato> contatos = new ContatoDao().getLista();                     
-		// Guarda a lista no request                     
-		
-		req.setAttribute("contatos", contatos);                     
-		
-		return "lista-contatos.jsp";             
-	}
+// @WebFilter(filterName = "MeuFiltro", ulrPatterns = {"/oi", "/ola"})
+// @WebFilter(filterName = "MeuFiltro", servletNames = {"meuServlet", "outroServlet"})	
+@WebFilter("/oi")          
+public class MeuFiltro implements Filter {
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) {
+		// ...              
+	}          
 }
 ```
 
 ### Observações:
 
-* Cada classe que implementa uma ação e é instanciada pelo Servlet central, deve implementar a interface Logica e deve retornar a string com o nome do arquivo .jsp que o cliente receberá:
+* Um filtro deve implementar o método doFilter que recebe um objeto do tipo HttpServletRequest (req), um objeto do tipo HttpServletResponse (res) e um objeto do tipo FilterChain (chain). Ao chamar chain.doFilter(req, res) no filtro, o proccessamento vai para o próximo filtro ou para o Servlet e depois retorna para o filtro. Dessa forma o código que vem antes da chamada chain.doFilter(req, res) é exectado primeiro e depois o código que vem depois de chain.doFilter(req, res) é executado após a chamada do filtros e servlet subsequentes.
+* Assim como um Servlet, um filtro também pode implementar os métodos init e detroy.
+* É interessante utilizar um filtro para abrir e fechar a conexão com banco de dados e passar essa conexão para os outros filtros e servlets:
 ```
-public interface Logica {
-	String executa(HttpServletRequest req, HttpServletResponse res) throws Exception;
+@WebFilter("/*")
+public class FiltroConexao implements Filter {
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		try {
+			Connection connection = new ConnectionFactory().getConnection();
+			// pendurando a connection na requisição
+			request.setAttribute("conexao", connection);
+			chain.doFilter(request, response);
+			connection.close();
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void init(FilterConfig arg0) throws ServletException {
+		// TODO Auto-generated method stub
+		
+	}
 }
 ```
-* Os arquivos .jsp que devem passar por um Servlet (para terem os dados) devem ser escondidos na pasta /WEB-INF/jsp.
