@@ -4,7 +4,7 @@
 
 ![alt text](https://i.imgur.com/cF9s42P.png)
 
-* **Servlet centralizador (Controller):** Para se evitra o uso de múltiplos Servlets (mpultiplas portas), utilzia-se um Servelet principal:
+* **Servlet centralizador (Controller):** Para se evitar o uso de múltiplos Servlets (múltiplas portas), utiliza-se um Servelet principal:
 ```
 @WebServlet("/sistema")
 public class ControllerServlet extends HttpServlet {
