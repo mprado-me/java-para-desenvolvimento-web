@@ -2,7 +2,8 @@
 <%@	taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-<script type="text/javascript" src="resources/js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="resources/js/jquery-3.2.1.js"></script>
+	<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet"/>
 </head>
 <body>
 	<script type="text/javascript">
