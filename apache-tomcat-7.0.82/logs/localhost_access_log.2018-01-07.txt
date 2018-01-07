@@ -1,0 +1,17 @@
+127.0.0.1 - - [07/Jan/2018:18:52:11 -0200] "GET / HTTP/1.1" 200 11217
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:17 -0200] "GET /fj21-tarefas/listaTarefas HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:17 -0200] "GET /fj21-tarefas/loginForm HTTP/1.1" 200 375
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:18 -0200] "GET /fj21-tarefas/resources/css/tarefas.css HTTP/1.1" 200 1413
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:20 -0200] "POST /fj21-tarefas/efetuaLogin HTTP/1.1" 200 265
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:23 -0200] "GET /fj21-tarefas/listaTarefas HTTP/1.1" 200 1342
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:23 -0200] "GET /fj21-tarefas/resources/js/jquery-3.2.1.js HTTP/1.1" 200 268039
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:27 -0200] "GET /fj21-tarefas/novaTarefa HTTP/1.1" 200 340
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:47 -0200] "POST /fj21-tarefas/adicionaTarefa HTTP/1.1" 200 164
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:50 -0200] "GET /fj21-tarefas/listaTarefas HTTP/1.1" 200 1681
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:55 -0200] "POST /fj21-tarefas/finalizaTarefa HTTP/1.1" 200 221
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:56 -0200] "GET /fj21-tarefas/removeTarefa?id=4 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:56 -0200] "GET /fj21-tarefas/listaTarefas HTTP/1.1" 200 1342
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:58 -0200] "GET /fj21-tarefas/removeTarefa?id=2 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:58 -0200] "GET /fj21-tarefas/listaTarefas HTTP/1.1" 200 1086
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:58 -0200] "GET /fj21-tarefas/removeTarefa?id=1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:52:58 -0200] "GET /fj21-tarefas/listaTarefas HTTP/1.1" 200 830
